@@ -1,5 +1,6 @@
 https://en.wikipedia.org/wiki/First_normal_form -> automic
 
 2nf product phu thuoc vao khoa chinh, category phu thuoc vao product 
+3nf du thua du lieu, tao them cac table
+k khhuyen khich xai auto increase
 
-3nf du thua du lieu

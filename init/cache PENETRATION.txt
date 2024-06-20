@@ -1,0 +1,9 @@
+backend
+cache
+database
+
+1. valid user ID at backend
+2. if valid roi, get from cache
+3. k co cache, lay tu db, save cache, set time
+4. db k co, update blacklist cache , set time
+clickhouse,  Bloom Filters
