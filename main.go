@@ -1,7 +1,6 @@
 package main
 
-import "gproject/baitap"
+// import "gproject/baitap"
 
 func main() {
-	baitap.Slove5()
 }
