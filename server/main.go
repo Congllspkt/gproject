@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "gproject/baitap"
 
 func main() {
-	fmt.Println("start project. Ahihi")
+		Slove1()
 }
