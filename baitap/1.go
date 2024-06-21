@@ -1,8 +1,8 @@
-package main
+package baitap
 
 import "fmt"
 
-func main() {
+func Slove1() {
 	var n int = 3
 	sequence := generateSequence(n)
 	for _, num := range sequence {

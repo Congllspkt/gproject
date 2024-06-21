@@ -1,10 +1,10 @@
-package main
+package baitap
 
 import (
 	"fmt"
 )
 
-func main() {
+func Slove2() {
 	var n int = 5;
 	expectedSum := (n * (n + 1)) / 2
 

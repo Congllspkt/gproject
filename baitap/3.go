@@ -1,10 +1,10 @@
-package main
+package baitap
 
 import (
 	"fmt"
 )
 
-func main() {
+func Slove3() {
 	longestRepetition := findLongestRepetition("AABBCCC")
 	fmt.Println(longestRepetition)
 }
