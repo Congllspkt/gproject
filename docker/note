@@ -87,3 +87,10 @@ docker rmi -f $(docker images -a -q)
 docker rmi $(docker images -a -q)
 
 -------------------------------------------docker file -> create images
+2. Build image
+docker build -t httpd_sample .
+
+3. Tạo và chạy container
+docker run -d -p 80:80 httpd_sample
+
+-------------------------------------------docker compose
