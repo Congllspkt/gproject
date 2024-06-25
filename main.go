@@ -1,11 +1,11 @@
 package main
 
-import "gproject/gobasic"
+import "gproject/server"
 
 
 func main() {
 	// server.Init()
-	gobasic.RunGoRuntine()
+	server.Init()
 }
 
 
