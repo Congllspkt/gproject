@@ -1,13 +1,31 @@
 package server
+
 import (
+	"log"
 	"net/http"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"go.uber.org/ratelimit"
 )
 
-func Init() {
+func TestHttp() {
+
+	http.HandleFunc("/", func(rw http.ResponseWriter, r*http.Request) {
+		log.Println("Hello Cong")
+	})
+
+	http.HandleFunc("/bye", func(http.ResponseWriter, *http.Request) {
+		log.Println("Goodbye Cong")
+	})
+
+	http.ListenAndServe(":4554", nil)
+}
+
+func InitRateLimit() {
+	limiter := ratelimit.New(100, ratelimit.Per(time.Minute))
+
 	r := gin.Default()
-	limiter := ratelimit.New(1)
 	r.GET("/ping", rateLimitMiddleware(limiter), getContext)
 	r.Run()
 }

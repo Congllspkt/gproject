@@ -4,8 +4,7 @@ import "gproject/server"
 
 
 func main() {
-	// server.Init()
-	server.Init()
+	server.TestHttp()
 }
 
 
