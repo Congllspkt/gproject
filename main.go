@@ -2,11 +2,9 @@ package main
 
 import "gproject/server"
 
-
 func main() {
 	server.TestHttp()
 }
-
 
 /*
 git add .

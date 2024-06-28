@@ -1,12 +1,16 @@
-const targetNumber = Math.floor(Math.random() * 1000) + 1;
+let n = 20000;
+
+const targetNumber = Math.floor(Math.random() * n) + 1;
 let attempts = 0;
-var hi=0, lo=1000;
+var hi=0, lo=n;
+
+document.getElementById('www').textContent = "Guess a number between 1 and " + n;
 function checkGuess() {
   const guessInput = document.getElementById('guessInput');
   const guess = parseInt(guessInput.value);
 
-  if (isNaN(guess) || guess < 1 || guess > 1000) {
-    alert("Please enter a valid number between 1 and 100.");
+  if (isNaN(guess) || guess < 1 || guess > n) {
+    alert("Please enter a valid number between 1 and " + n);
     return;
   }
 
