@@ -1,9 +1,9 @@
 package main
 
-import "gproject/server"
+import "gproject/echobasic"
 
 func main() {
-	server.TestHttp()
+	echobasic.InitEcho()
 }
 
 /*
