@@ -1,8 +1,12 @@
 package main
 
-import "gproject/echobasic"
+import (
+	initdb "gproject/Initdb"
+	echobasic "gproject/echoBasic"
+)
 
 func main() {
+	initdb.InitDB()
 	echobasic.InitEcho()
 }
 
