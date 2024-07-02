@@ -1,5 +1,5 @@
 development:
   dialect: postgres
-  datasource: host=localhost port=5432 dbname=mydb user=myuser password=mypassword sslmode=disable
+  datasource: host=localhost port=5432 user=myuser password=mypassword dbname=mydb sslmode=disable
   dir: migrations
   table: migrations

@@ -1,13 +1,11 @@
 package main
 
 import (
-	initdb "gproject/Initdb"
-	echobasic "gproject/echoBasic"
+	cmd "gproject/cmd/dev"
 )
 
 func main() {
-	initdb.InitDB()
-	echobasic.InitEcho()
+	cmd.MainDev()
 }
 
 /*
