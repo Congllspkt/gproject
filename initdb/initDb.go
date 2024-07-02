@@ -10,7 +10,6 @@ func InitDB() {
 		Password:"mypassword",
 		DbName:"mydb",
 	}
-
 	sql.Connect()
 	defer sql.Close();
 }
