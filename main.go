@@ -1,11 +1,13 @@
 package main
 
 import (
-	cmd "gproject/cmd/dev"
+	"gproject/baitap"
+	// cmd "gproject/cmd/dev"
 )
 
 func main() {
-	cmd.MainDev()
+	// cmd.MainDev()
+	baitap.TestPool()
 }
 
 /*
