@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// cmd.MainDev()
-	baitap.TestPool()
+	baitap.TestWaitgroup()
 }
 
 /*
