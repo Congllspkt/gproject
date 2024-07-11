@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"gproject/baitap"
 	// cmd "gproject/cmd/dev"
 )
@@ -29,6 +28,8 @@ func main() {
 	// list.Display()
 	// list.RemoveLast()
 	// list.Display()
+
+	baitap.TestTreeTree2()
 
 }
 
