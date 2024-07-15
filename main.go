@@ -1,14 +1,14 @@
 package main
 
 import (
-	"gproject/baitap"
+	"gproject/codeExam"
 	// cmd "gproject/cmd/dev"
 )
 
 func main() {
 	// cmd.MainDev()
-	// baitap.TestWaitgroup()
-	// list := baitap.LinkedList{}
+	// codeExam.TestWaitgroup()
+	// list := codeExam.LinkedList{}
 
     // list.InsertLast(10)
     // list.InsertLast(20)
@@ -29,7 +29,7 @@ func main() {
 	// list.RemoveLast()
 	// list.Display()
 
-	baitap.TestTreeTree2()
+	codeExam.TestTreeTree2()
 
 }
 
