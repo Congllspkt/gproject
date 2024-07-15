@@ -5,7 +5,7 @@ go run server\main.go
 
 
 git add .
-git commit -m 'go router'
+git commit -m 'go mvc p1'
 git push
 
 
