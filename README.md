@@ -31,6 +31,9 @@ sql-migrate down
 
 go get -u go.uber.org/zap
 
+go get github.com/spf13/viper
+vscode icon, yaml
+
 
 
 
