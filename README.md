@@ -5,7 +5,7 @@ go run server\main.go
 
 
 git add .
-git commit -m 'go Error Handler'
+git commit -m 'go Logs Handler'
 git push
 
 
@@ -27,6 +27,9 @@ docker run --name my-postgres -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypas
 sql-migrate up
 sql-migrate down
 
+
+
+go get -u go.uber.org/zap
 
 
 

@@ -39,6 +39,8 @@ require (
 	github.com/swaggo/files/v2 v2.0.0 // indirect
 	github.com/swaggo/swag v1.8.12 // indirect
 	github.com/temoto/robotstxt v1.1.2 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
+	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 	golang.org/x/tools v0.21.1-0.20240508182429-e35e4ccd0d2d // indirect
 	google.golang.org/appengine v1.6.8 // indirect
