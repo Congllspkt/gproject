@@ -12,7 +12,7 @@ func NewPongController() *PongController {
 	return &PongController{}
 }
 
-func (uc *PongController) Pong(c *gin.Context) {
+func (pc *PongController) Pong(c *gin.Context) {
 	name := c.DefaultQuery("name", " .") // curl http://localhost:8082/v2/2024/ping/name
 	uid := c.Query("uid")                // curl http://localhost:8082/v2/2024/ping/?uid=1234
 	c.JSON(http.StatusOK, gin.H{

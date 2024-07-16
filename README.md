@@ -5,7 +5,7 @@ go run server\main.go
 
 
 git add .
-git commit -m 'go mvc p1'
+git commit -m 'go mvc p2'
 git push
 
 
