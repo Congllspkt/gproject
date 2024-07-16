@@ -29,7 +29,7 @@ func GetViperConf() {
 	err := viper.ReadInConfig()
 
 	if err != nil {
-		fmt.Printf("fail to read viper config %w \n", err)
+		fmt.Printf("fail to read viper config %v", err)
 		return
 	}
 

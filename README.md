@@ -37,3 +37,7 @@ vscode icon, yaml
 
 
 
+git add .
+git commit -m 'go viper'
+git push
+
