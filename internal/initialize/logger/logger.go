@@ -1,6 +1,8 @@
 package logger
 
 import (
+	"fmt"
+	"gproject/internal/initialize/setting"
 	"os"
 
 	"github.com/natefinch/lumberjack"
@@ -12,28 +14,31 @@ type LoggerZap struct {
 	*zap.Logger
 }
 
-func NewLogger() *LoggerZap {
-	logLevel := "debug"
+func NewLogger(config setting.LoggerSetting) *LoggerZap {
+	logLevel := config.Log_level //"debug"
 	var level zapcore.Level
 	switch logLevel {
 	case "debug":
 		level = zapcore.DebugLevel
 	case "info":
-		level = zapcore.DebugLevel
+		level = zapcore.InfoLevel
 	case "warn":
-		level = zapcore.DebugLevel
+		level = zapcore.WarnLevel
 	case "error":
-		level = zapcore.DebugLevel
+		level = zapcore.ErrorLevel
 	default:
 		level = zapcore.InfoLevel
 	}
 	encoder := getEncoderLog()
+
+	fmt.Println("----------------", config.File_log_name)
+
 	hook := lumberjack.Logger{
-		Filename:   "./storage/logs/dev.xxx.log",
-		MaxSize:    500,
-		MaxBackups: 3,
-		MaxAge:     28,
-		Compress:   true,
+		Filename:   config.File_log_name,
+		MaxSize:    config.Max_size,
+		MaxBackups: config.Max_backups,
+		MaxAge:     config.Max_age,
+		Compress:   config.Compress,
 	}
 
 	var multiWriteSyncer = zapcore.NewMultiWriteSyncer(zapcore.AddSync(os.Stdout), zapcore.AddSync(&hook))

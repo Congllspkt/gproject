@@ -45,6 +45,6 @@ curl --header "Authorization: valid_token" http://localhost:8082/v1/2024/user/
 
 
 git add .
-git commit -m 'logger 1'
+git commit -m 'logger 2'
 git push
 
