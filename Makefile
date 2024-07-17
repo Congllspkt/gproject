@@ -1,5 +1,5 @@
-pro:
-	docker rmi -f web-service:1.0
-	docker-compose up
-dev:
-	go run main.go
+#name app
+APP_NAME = server
+
+run:
+	go run ./cmd/${APP_NAME}/
