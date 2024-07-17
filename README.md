@@ -34,12 +34,17 @@ go get -u go.uber.org/zap
 go get github.com/spf13/viper
 vscode icon, yaml
 
+middlewares
+
+curl --header "Authorization: valid_token" http://localhost:8082/v1/2024/user/
+
+
 
 
 
 
 
 git add .
-git commit -m 'HandlerFunc'
+git commit -m 'middlewares'
 git push
 
