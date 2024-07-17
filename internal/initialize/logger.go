@@ -1,5 +1,10 @@
 package initialize
 
-func InitLogger (){
-	
+import (
+	"gproject/internal/initialize/global"
+	"gproject/internal/initialize/logger"
+)
+
+func InitLogger() {
+	global.Logger = logger.NewLogger()
 }
