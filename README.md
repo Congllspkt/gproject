@@ -47,9 +47,28 @@ show tables;
 desc go_db_user;
 
 
+BenchmarkMaxOpenConns1-12
+     159           6803135 ns/op            6642 B/op         87 allocs/op
+PASS
+ok      gproject/internal/tests/benchmark       2.377s
+
+
+BenchmarkMaxOpenConns10
+BenchmarkMaxOpenConns10-12
+    1159            973816 ns/op            5891 B/op         79 allocs/op
+
+BenchmarkMaxOpenConns100
+BenchmarkMaxOpenConns100-12
+     781           1308933 ns/op            6673 B/op         82 allocs/op
+
+159 times
+6803135 ns
+6642 Byte
+87 allocs
+
 
 
 git add .
-git commit -m 'Migrating tables'
+git commit -m 'test connrction pool with beanchmark'
 git push
 
