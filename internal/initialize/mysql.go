@@ -3,6 +3,7 @@ package initialize
 import (
 	"fmt"
 	"gproject/internal/initialize/global"
+	"gproject/internal/initialize/po"
 	"gproject/internal/initialize/setting"
 	"time"
 
@@ -30,6 +31,7 @@ func InitMySql() {
 	global.Mdb = db
 
 	setPool(m)
+	migrateTables()
 }
 
 func setPool(m setting.MySQLSetting) {
@@ -42,5 +44,17 @@ func setPool(m setting.MySQLSetting) {
 	sqlDb.SetConnMaxIdleTime(time.Duration(m.MaxIdleConns))
 	sqlDb.SetMaxOpenConns(m.MaxOpenConns)
 	sqlDb.SetConnMaxLifetime(time.Duration(m.ConMaxLifeTime))
-	
+
+}
+
+func migrateTables() {
+	err := global.Mdb.AutoMigrate(
+		&po.User{},
+		&po.Role{},
+	)
+
+	if err != nil {
+		fmt.Println("Migrating tables err: ", err)
+	}
+
 }

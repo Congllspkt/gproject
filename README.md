@@ -38,13 +38,18 @@ middlewares
 
 curl --header "Authorization: valid_token" http://localhost:8082/v1/2024/user/
 
+docker run -d -p 33306:3306 --name mysql-container1 -e MYSQL_ROOT_PASSWORD=root1234 -e MYSQL_DATABASE=shopdevgo mysql
 
-
+docker exec -it mysql-container1 bash
+mysql -uroot -proot1234
+use shopdevgo
+show tables;
+desc go_db_user;
 
 
 
 
 git add .
-git commit -m 'init mysql'
+git commit -m 'Migrating tables'
 git push
 

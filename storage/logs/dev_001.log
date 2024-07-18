@@ -1,2 +1,26 @@
 {"level":"INFO","time":"2024-07-18T08:26:29.340+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
 {"level":"INFO","time":"2024-07-18T08:28:17.771+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T10:33:22.353+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"ERROR","time":"2024-07-18T10:33:22.355+0700","caller":"initialize/mysql.go:16","msg":"Init mySQL fail","error":"dial tcp 127.0.0.1:33306: connectex: No connection could be made because the target machine actively refused it.","stacktrace":"gproject/internal/initialize.checkErrorPanic\n\tD:/g-project/gproject/internal/initialize/mysql.go:16\ngproject/internal/initialize.InitMySql\n\tD:/g-project/gproject/internal/initialize/mysql.go:28\ngproject/internal/initialize.Run\n\tD:/g-project/gproject/internal/initialize/run.go:18\nmain.main\n\tD:/g-project/gproject/cmd/server/main.go:12\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:271"}
+{"level":"INFO","time":"2024-07-18T10:33:22.356+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T10:55:10.634+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"ERROR","time":"2024-07-18T10:55:10.636+0700","caller":"initialize/mysql.go:16","msg":"Init mySQL fail","error":"this authentication plugin is not supported","stacktrace":"gproject/internal/initialize.checkErrorPanic\n\tD:/g-project/gproject/internal/initialize/mysql.go:16\ngproject/internal/initialize.InitMySql\n\tD:/g-project/gproject/internal/initialize/mysql.go:28\ngproject/internal/initialize.Run\n\tD:/g-project/gproject/internal/initialize/run.go:18\nmain.main\n\tD:/g-project/gproject/cmd/server/main.go:12\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:271"}
+{"level":"INFO","time":"2024-07-18T10:55:10.637+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T11:27:14.433+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"ERROR","time":"2024-07-18T11:27:14.435+0700","caller":"initialize/mysql.go:16","msg":"Init mySQL fail","error":"this authentication plugin is not supported","stacktrace":"gproject/internal/initialize.checkErrorPanic\n\tD:/g-project/gproject/internal/initialize/mysql.go:16\ngproject/internal/initialize.InitMySql\n\tD:/g-project/gproject/internal/initialize/mysql.go:28\ngproject/internal/initialize.Run\n\tD:/g-project/gproject/internal/initialize/run.go:18\nmain.main\n\tD:/g-project/gproject/cmd/server/main.go:12\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:271"}
+{"level":"INFO","time":"2024-07-18T11:27:14.435+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T11:31:38.788+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T11:31:38.800+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T13:07:10.348+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T13:07:10.357+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T13:09:28.524+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T13:09:28.529+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T13:10:05.137+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T13:10:05.142+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T13:10:31.737+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"ERROR","time":"2024-07-18T13:10:31.747+0700","caller":"initialize/mysql.go:16","msg":"Init mySQL fail","error":"Error 1045 (28000): Access denied for user 'root'@'172.17.0.1' (using password: YES)","stacktrace":"gproject/internal/initialize.checkErrorPanic\n\tD:/g-project/gproject/internal/initialize/mysql.go:16\ngproject/internal/initialize.InitMySql\n\tD:/g-project/gproject/internal/initialize/mysql.go:28\ngproject/internal/initialize.Run\n\tD:/g-project/gproject/internal/initialize/run.go:18\nmain.main\n\tD:/g-project/gproject/cmd/server/main.go:12\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:271"}
+{"level":"INFO","time":"2024-07-18T13:10:31.747+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T13:10:48.615+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T13:10:48.620+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T13:15:40.970+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T13:15:40.974+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
