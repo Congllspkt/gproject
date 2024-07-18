@@ -75,6 +75,6 @@ docker run -d -p 16379:6379 --name redis-container1 redis
 
 
 git add .
-git commit -m 'test redis'
+git commit -m 'router update'
 git push
 

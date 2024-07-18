@@ -48,3 +48,23 @@
 {"level":"INFO","time":"2024-07-18T15:23:24.183+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
 {"level":"INFO","time":"2024-07-18T15:23:24.318+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
 {"level":"INFO","time":"2024-07-18T15:23:24.319+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 1001"}
+{"level":"INFO","time":"2024-07-18T15:32:32.349+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T15:32:32.354+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T15:32:32.484+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T15:32:32.484+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 1001"}
+{"level":"INFO","time":"2024-07-18T15:47:35.780+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T15:47:35.785+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T15:47:35.912+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T15:47:35.913+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 1001"}
+{"level":"INFO","time":"2024-07-18T16:37:36.354+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T16:37:36.368+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T16:37:36.542+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T16:37:36.543+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 1001"}
+{"level":"INFO","time":"2024-07-18T16:37:54.969+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T16:37:54.975+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T16:37:55.125+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T16:37:55.126+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 1001"}
+{"level":"INFO","time":"2024-07-18T16:46:04.934+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T16:46:04.938+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T16:46:05.080+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T16:46:05.081+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 1001"}

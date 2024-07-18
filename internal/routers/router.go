@@ -2,9 +2,7 @@ package routers
 
 import (
 	"fmt"
-	"gproject/internal/controllers"
-	"gproject/internal/middlewares"
-
+	"gproject/internal/initialize/global"
 	"github.com/gin-gonic/gin"
 )
 
@@ -32,23 +30,33 @@ func CC(c *gin.Context) {
 
 func NewRouter() *gin.Engine {
 
-	r := gin.Default()
-	r.Use(middlewares.AuthenMiddleware(), AA(), BB(), CC)
-
-	v1 := r.Group("v1/2024")
-	{
-		v1.GET("/ping", controllers.NewPongController().Pong)        //  curl http://localhost:8082/v1/2024/ping
-		v1.GET("/user", controllers.NewUserController().GetuserById) //  curl http://localhost:8082/v1/2024/ping
-		// v1.PUT("/ping", Pong)
+	var r *gin.Engine
+	if global.Config.Server.Mode == "dev" {
+		gin.SetMode(gin.DebugMode)
+		gin.ForceConsoleColor()
+		r = gin.Default()
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+		r = gin.New()
 	}
 
-	// v2 := r.Group("v2/2024")
-	// {
-	// curl http://localhost:8082/v2/2024/ping
-	// v2.GET("/ping/:name", Pong)
-	// v2.GET("/ping", Pong)
-	// v2.PUT("/ping", Pong)
-	// }
+	manageRouter := RouterGroupApp.Manage
+	userRouter := RouterGroupApp.User
+
+	mainGroup := r.Group("/v1/2024")
+	{
+		mainGroup.GET("checkStatus")
+	}
+
+	{
+		userRouter.InitUserRouter(mainGroup)
+		userRouter.InitProductRouter(mainGroup)
+	}
+
+	{
+		manageRouter.InitUserRouter(mainGroup)
+		manageRouter.InitAdminRouter(mainGroup)
+	}
 
 	return r
 
