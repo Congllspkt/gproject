@@ -24,3 +24,11 @@
 {"level":"INFO","time":"2024-07-18T13:10:48.620+0700","caller":"initialize/mysql.go:29","msg":"Init mySQL success"}
 {"level":"INFO","time":"2024-07-18T13:15:40.970+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
 {"level":"INFO","time":"2024-07-18T13:15:40.974+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T14:17:43.535+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T14:17:43.540+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T14:32:02.852+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T14:32:02.857+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"ERROR","time":"2024-07-18T14:32:03.097+0700","caller":"initialize/redis.go:25","msg":"Redis Init Error","stacktrace":"gproject/internal/initialize.InitRedis\n\tD:/g-project/gproject/internal/initialize/redis.go:25\ngproject/internal/initialize.Run\n\tD:/g-project/gproject/internal/initialize/run.go:19\nmain.main\n\tD:/g-project/gproject/cmd/server/main.go:12\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:271"}
+{"level":"INFO","time":"2024-07-18T14:42:26.975+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T14:42:26.981+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T14:42:27.109+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
