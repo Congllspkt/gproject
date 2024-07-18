@@ -1,10 +1,8 @@
 package logger
 
 import (
-	"fmt"
 	"gproject/internal/initialize/setting"
 	"os"
-
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -31,7 +29,6 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 	}
 	encoder := getEncoderLog()
 
-	fmt.Println("----------------", config.File_log_name)
 
 	hook := lumberjack.Logger{
 		Filename:   config.File_log_name,

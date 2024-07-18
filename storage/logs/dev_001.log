@@ -32,3 +32,19 @@
 {"level":"INFO","time":"2024-07-18T14:42:26.975+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
 {"level":"INFO","time":"2024-07-18T14:42:26.981+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
 {"level":"INFO","time":"2024-07-18T14:42:27.109+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T15:14:51.067+0700","caller":"initialize/run.go:16","msg":"Config log ok!!","ok":"success"}
+{"level":"INFO","time":"2024-07-18T15:14:51.074+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T15:14:51.233+0700","caller":"initialize/redis.go:29","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T15:14:51.234+0700","caller":"initialize/redis.go:38","msg":"test redis with score: 100"}
+{"level":"INFO","time":"2024-07-18T15:19:32.026+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T15:19:32.032+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T15:19:32.200+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T15:19:32.200+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 100"}
+{"level":"INFO","time":"2024-07-18T15:22:51.027+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T15:22:51.032+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T15:22:51.167+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T15:22:51.168+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 100"}
+{"level":"INFO","time":"2024-07-18T15:23:24.178+0700","caller":"initialize/logger.go:10","msg":"Init Logger success"}
+{"level":"INFO","time":"2024-07-18T15:23:24.183+0700","caller":"initialize/mysql.go:30","msg":"Init mySQL success"}
+{"level":"INFO","time":"2024-07-18T15:23:24.318+0700","caller":"initialize/redis.go:28","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-18T15:23:24.319+0700","caller":"initialize/redis.go:37","msg":"test redis with score: 1001"}

@@ -12,7 +12,7 @@ func InitConFig() {
 	viper.AddConfigPath("./config/")
 	viper.SetConfigName("local")
 	viper.SetConfigType("yaml")
-
+	
 	err := viper.ReadInConfig()
 
 	if err != nil {

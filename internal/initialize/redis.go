@@ -27,5 +27,12 @@ func InitRedis() {
 	}
 	global.Logger.Info("Redis Init Success")
 	global.Rdb = rdb
+	tryRedis()
 
+}
+
+func tryRedis() {
+	global.Rdb.Set(ctx, "score", 1001, 0)
+	value, _ := global.Rdb.Get(ctx, "score").Result()
+	global.Logger.Info("test redis with score: " + value)
 }
