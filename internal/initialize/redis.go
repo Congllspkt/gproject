@@ -23,7 +23,7 @@ func InitRedis() {
 
 	if err != nil {
 		global.Logger.Error("Redis Init Error")
-		return
+		panic("Init Redis fail")
 	}
 	global.Logger.Info("Redis Init Success")
 	global.Rdb = rdb

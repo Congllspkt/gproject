@@ -12,12 +12,6 @@ import (
 	"gorm.io/gorm"
 )
 
-func checkErrorPanic(err error, errString string) {
-	if err != nil {
-		global.Logger.Error(errString, zap.Error(err))
-	}
-}
-
 func InitMySql() {
 	m := global.Config.MySQL
 	dns := "%s:%s@tcp(%s:%v)/%s?charset=utf8mb4&parseTime=True&loc=Local"
@@ -26,7 +20,10 @@ func InitMySql() {
 		SkipDefaultTransaction: false,
 	})
 
-	checkErrorPanic(err, "Init mySQL fail")
+	if err != nil {
+		global.Logger.Error("Init mySQL fail", zap.Error(err))
+		panic("Init mySQL fail")
+	}
 	global.Logger.Info("Init mySQL success")
 	global.Mdb = db
 

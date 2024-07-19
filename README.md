@@ -72,9 +72,37 @@ BenchmarkMaxOpenConns100-12
 docker run -d -p 16379:6379 --name redis-container1 redis
 
 
+producer: push/write, tạo message
+offset: vị trí tin nhắn trong queue
+LEO: log End Offset
+consumer: pull/nhận tin nhắn
+consumer group: 1 consumer -> n partitions nhưng 1 partition -> 1 consumer
+vi dụ:
++ p: p1, p2, p3, p4
++ cgA: c1, c2, c3, c4
++ cgB: c5, c6
+
+-> Phân chia:
+- p1:
+     + cgA: c1
+     + cgB: c5
+- p2:
+     + cgA: c2
+     + cgB: c6
+- p3:
+     + cgA: c3
+     + cgB: c5
+- p4:
+     + cgA: c4
+     + cgB: c6
+
+topic: là nhiều queue, tăng hiệu suất
+partition: 1 topic có 3 partition, các partition chạy song song lẫn nhau
+broker: 1 kafka là 1 cluster broker gồm nhiều brokers
+
 
 
 git add .
-git commit -m 'router update'
+git commit -m 'panic & kafka update'
 git push
 
