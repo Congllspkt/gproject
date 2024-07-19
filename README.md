@@ -103,6 +103,6 @@ broker: 1 kafka là 1 cluster broker gồm nhiều brokers
 
 
 git add .
-git commit -m 'try test data'
+git commit -m 'fix'
 git push
 
