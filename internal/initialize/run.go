@@ -8,8 +8,8 @@ func Run() {
 	InitRedis()
 	InitKafka()
 
-	r := InitRouter()
-
-	r.Run(":8002")
+	TryDataSample()
+	// r := InitRouter()
+	// r.Run(":8002")
 
 }

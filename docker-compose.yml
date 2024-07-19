@@ -1,12 +1,16 @@
-version: '2'
-
+version: "3"
 services:
-  web-service:
-    container_name: web-service
-    build: .
-    image: web-service:1.0
+  redisShop:
+    image: redis
     ports:
-      - "3000:3000"
-    environment:
-      - APP_NAME=github
+      - "16379:6379"
+    container_name: redisShop
 
+  mysqlShop:
+    image: mysql
+    ports:
+      - "33306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root1234
+      - MYSQL_DATABASE=shopdevgo
+    container_name: mysqlShop
