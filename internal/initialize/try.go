@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"gproject/internal/initialize/global"
 	"gproject/internal/initialize/po"
-
-	"golang.org/x/exp/rand"
+	"github.com/google/uuid"
+	"math/rand/v2"
 )
 
 func TryDataSample() {
@@ -22,10 +22,13 @@ func tryRedis() {
 
 func tryMySQL() {
 	// *************************************** remove table
-	// global.Mdb.Migrator().DropTable(&po.Role{})
+	global.Mdb.Migrator().DropTable(&po.Role{})
+	global.Mdb.Migrator().DropTable(&po.User{})
+
 
 	// *************************************** add table
-	// global.Mdb.Migrator().CreateTable(&po.Role{})
+	global.Mdb.Migrator().CreateTable(&po.Role{})
+	global.Mdb.Migrator().CreateTable(&po.User{})
 
 	// *************************************** insert 1
 	// role := po.Role{
@@ -35,8 +38,8 @@ func tryMySQL() {
 	// global.Mdb.Create(&role)
 
 	// *************************************** insert n
-	// inserts := generateRoles(140)
-	// global.Mdb.Create(&inserts)
+	inserts := generateRoles(140)
+	global.Mdb.Create(&inserts)
 
 	// *************************************** get all
 	// var roles []po.Role
@@ -51,10 +54,37 @@ func tryMySQL() {
 	// fmt.Printf("Total rows in the table: %d\n", count)
 
 	// *************************************** Retrieve roles with note starting with "A"
-	var roles []po.Role
-	global.Mdb.Where("role_note LIKE ?", "C%").Find(&roles)
-	for _, role := range roles {
-		fmt.Printf("ID: %d \t Name: %s \t Note: %s\n", role.ID, role.RoleName, role.RoleNote)
+	// var roles []po.Role
+	// global.Mdb.Where("role_note LIKE ?", "C%").Find(&roles)
+	// for _, role := range roles {
+	// 	fmt.Printf("ID: %d \t Name: %s \t Note: %s\n", role.ID, role.RoleName, role.RoleNote)
+	// }
+
+
+	user := po.User{
+		UUID:     uuid.New(),
+		UserName: "john_doe",
+		IsActive: true,
+		Roles: []po.Role{
+			{ID: 1},
+			{ID: 11},
+			{ID: 14},
+			{ID: 18},
+		},
+	}
+	global.Mdb.Create(&user)
+
+	var users []po.User
+	global.Mdb.Preload("Roles").Find(&users)
+
+
+	for _, user := range users {
+		fmt.Printf("User: %s\n", user.UserName)
+		fmt.Println("Roles:")
+		for _, role := range user.Roles {
+			fmt.Printf("- %s\n", role.RoleName)
+		}
+		fmt.Println()
 	}
 }
 
@@ -63,7 +93,7 @@ func generateRoles(count int) []po.Role {
 
 	for i := 0; i < count; i++ {
 		role := po.Role{
-			RoleName: fmt.Sprintf("Role %d", i+1),
+			RoleName: fmt.Sprintf("%s_%d",  generateRandomNote(), i+1),
 			RoleNote: generateRandomNote(),
 		}
 		roles = append(roles, role)
@@ -119,6 +149,6 @@ func generateRandomNote() string {
 		"Yamaha soundbar", "Zigbee light bulb",
 	}
 
-	randomIndex := rand.Intn(len(notes))
+	randomIndex := rand.IntN(len(notes))
 	return notes[randomIndex]
 }

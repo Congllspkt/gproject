@@ -103,6 +103,6 @@ broker: 1 kafka là 1 cluster broker gồm nhiều brokers
 
 
 git add .
-git commit -m 'panic & kafka update'
+git commit -m 'try test data'
 git push
 
