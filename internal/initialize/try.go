@@ -12,8 +12,8 @@ func TryDataSample() {
 	tryRedis()
 	tryMySQL()
 
-	kafkaProducer = getKafkaWriter(kafkaURL, kafkaTopic)
-	defer kafkaProducer.Close()
+	// kafkaProducer = getKafkaWriter(kafkaURL, kafkaTopic)
+	// defer kafkaProducer.Close()
 }
 
 func tryRedis() {

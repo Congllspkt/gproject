@@ -107,6 +107,10 @@ docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true provectuslabs/kafka-u
 go get -u github.com/segmentio/kafka-go
 awesome-go.com
 
+docker-compose down
+docker-compose up -d
+go run cmd/server/main.go
+
 
 
 
