@@ -9,7 +9,13 @@ func Run() {
 	InitKafka()
 
 	TryDataSample()
-	// r := InitRouter()
-	// r.Run(":8002")
+	r := InitRouter()
+
+	r.POST("action/stock", actionStock)
+
+	go RegisterConsumeATC(1)
+	go RegisterConsumeATC(2)
+
+	r.Run(":8999")
 
 }

@@ -100,9 +100,17 @@ topic: là nhiều queue, tăng hiệu suất
 partition: 1 topic có 3 partition, các partition chạy song song lẫn nhau
 broker: 1 kafka là 1 cluster broker gồm nhiều brokers
 
+docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true provectuslabs/kafka-ui
+
+
+
+go get -u github.com/segmentio/kafka-go
+awesome-go.com
+
+
 
 
 git add .
-git commit -m 'fix'
+git commit -m 'kafka'
 git push
 
