@@ -115,6 +115,6 @@ go run cmd/server/main.go
 
 
 git add .
-git commit -m 'kafka'
+git commit -m 'go-design-pattern'
 git push
 
