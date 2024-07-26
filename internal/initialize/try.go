@@ -25,13 +25,16 @@ func tryRedis() {
 
 func tryMySQL() {
 	// *************************************** remove table
-	global.Mdb.Migrator().DropTable(&po.Role{})
-	global.Mdb.Migrator().DropTable(&po.User{})
+	// global.Mdb.Migrator().DropTable(&po.Role{})
+	// global.Mdb.Migrator().DropTable(&po.User{})
 
 
 	// *************************************** add table
-	global.Mdb.Migrator().CreateTable(&po.Role{})
-	global.Mdb.Migrator().CreateTable(&po.User{})
+	// global.Mdb.Migrator().CreateTable(&po.Role{})
+	// global.Mdb.Migrator().CreateTable(&po.User{})
+
+	global.Mdb.AutoMigrate(&po.User{})
+	global.Mdb.AutoMigrate(&po.Role{})
 
 	// *************************************** insert 1
 	// role := po.Role{
@@ -41,7 +44,7 @@ func tryMySQL() {
 	// global.Mdb.Create(&role)
 
 	// *************************************** insert n
-	inserts := generateRoles(140)
+	inserts := generateRoles(1000)
 	global.Mdb.Create(&inserts)
 
 	// *************************************** get all
@@ -69,10 +72,10 @@ func tryMySQL() {
 		UserName: "john_doe",
 		IsActive: true,
 		Roles: []po.Role{
-			{ID: 1},
-			{ID: 11},
-			{ID: 14},
-			{ID: 18},
+			{ID: rand.Int64N(1000)},
+			{ID: rand.Int64N(1000)},
+			{ID: rand.Int64N(1000)},
+			{ID: rand.Int64N(1000)},
 		},
 	}
 	global.Mdb.Create(&user)

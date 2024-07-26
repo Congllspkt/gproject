@@ -42,10 +42,12 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
+	github.com/gorilla/securecookie v1.1.2 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-uuid v1.0.3 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
+	github.com/hbollon/go-edlib v1.6.0 // indirect
 	github.com/jcmturner/aescts/v2 v2.0.0 // indirect
 	github.com/jcmturner/dnsutils/v2 v2.0.0 // indirect
 	github.com/jcmturner/gofork v1.7.6 // indirect
@@ -89,6 +91,7 @@ require (
 )
 
 require (
+	github.com/AfterShip/email-verifier v1.4.0
 	github.com/benbjohnson/clock v1.3.5 // indirect
 	github.com/bytedance/sonic v1.11.9 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
@@ -101,6 +104,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.22.0 // indirect
 	github.com/goccy/go-json v0.10.3 // indirect
+	github.com/gorilla/sessions v1.3.0
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.8 // indirect
 	github.com/labstack/echo/v4 v4.12.0 // indirect
@@ -121,6 +125,7 @@ require (
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.2 // indirect
+	github.com/wagslane/go-password-validator v0.3.0
 	go.uber.org/ratelimit v0.3.1 // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.24.0 // indirect
