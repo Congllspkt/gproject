@@ -1,6 +1,7 @@
 package main
 
-import "go-design-pattern/creational/builder/solution/builder/internal"
+import "gproject/codeExam/creational/builder/solution/builder/internal"
+
 
 func main() {
 	director := internal.NewDirector()

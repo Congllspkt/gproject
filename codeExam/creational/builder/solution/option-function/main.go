@@ -1,6 +1,7 @@
 package main
 
-import "go-design-pattern/creational/builder/solution/option-function/internal"
+import "gproject/codeExam/creational/builder/solution/option-function/internal"
+
 
 func main() {
 	service := internal.NewService(
