@@ -27,7 +27,7 @@ settting:
     
     kubectl:
         kubectl version --client
-        kubectl get pods9 -A
+        kubectl get pods -A
         kubectl get nodes
 
     minikube/kind:
@@ -37,5 +37,11 @@ settting:
         minikube dashboard
 
 Pod:
+    1 pod co the co nhieu container
+    many pods
     container: port
 
+    kubectl get pods
+    kubectl get pods -w
+    kubectl run app1 --image=XXXXX --image-pull-policy Alway
+    kubectl describe pods app1
