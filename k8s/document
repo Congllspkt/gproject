@@ -45,3 +45,60 @@ Pod:
     kubectl get pods -w
     kubectl run app1 --image=XXXXX --image-pull-policy Alway
     kubectl describe pods app1
+
+container port > target port
+pod port
+-> expose for user access: nodePort, loadBalancer 
+
+
+kubectl get services
+kubectl get svc
+kubectl expose pods app1 --port=8081 --target-port=8080 --name=service1 --type=NodePort
+kubectl describe svc service1
+kubectl get nodes -o wide // see full IP
+expose external-ip xai tam: minikube service service1 --url
+
+log:
+kubectl logs app1
+kubectl logs app1 -f // follow watch
+kubectl logs app1 -c app1
+
+kubectl exec -it app1 -- sh
+
+Imperative vs Declarative
+
+Imperative: kubectl run app2 --image=XXXXX
+
+
+
+Declarative:
+-----------------pod.yaml
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-app
+spec:
+  containers:
+    - name: simple-app
+        image: nginx:1.14.2
+        ports:
+            - containerPort: 8080
+
+
+
+kubectl apply -f pod.yaml
+kubectl describe pods simple-app
+
+
+ReplicaSet
+
+
+
+
+
+
+
+
+
