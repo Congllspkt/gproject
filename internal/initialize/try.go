@@ -81,8 +81,10 @@ func tryMySQL() {
 	global.Mdb.Create(&user)
 
 	var users []po.User
-	global.Mdb.Preload("Roles").Find(&users)
+	global.Mdb.Preload("Roles").Find(&users).Where(user)
 
+	// var users []po.User
+    // global.Mdb.Raw("SELECT * FROM go_db_user").Scan(&users)
 
 	for _, user := range users {
 		fmt.Printf("User: %s\n", user.UserName)

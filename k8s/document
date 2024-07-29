@@ -1,0 +1,41 @@
+orchestration
+
+cloud native computing foundation cncf
+
+
+
+k8s cluster
+    
+    control plan / master node:
+        etcd: db
+        api-server <---ask/reply---> scheduler
+        controller manager: control pods
+        cloud manager: aws,...
+        container runtime
+
+    worker nodes / data planer:
+        pods
+        kubelet: manage pods with api server (deploy, report for api-server)
+        container runtime
+        kube-proxy: connect pods
+
+
+settting:
+    docker
+
+    account docker hub -> save docker image (ECA AWS)
+    
+    kubectl:
+        kubectl version --client
+        kubectl get pods9 -A
+        kubectl get nodes
+
+    minikube/kind:
+        minikube version
+        start cluster: minikube start 
+        minikube status
+        minikube dashboard
+
+Pod:
+    container: port
+
