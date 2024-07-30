@@ -10,5 +10,5 @@ func Run() {
 	InitRedis()
 	InitKafka()
 
-	tryMySQL()
+	TryKafka1()
 }

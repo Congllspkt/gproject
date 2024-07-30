@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Calls</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>
+
+function generateRandomText(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    
+    return result;
+}
+
+
+$(document).ready(function() {
+    const apiEndpoint = 'http://localhost:8080/produce?message='; // Replace this with your API endpoint
+
+    const totalCalls = 1;
+    let callsCompleted = 0;
+
+    for (let i = 0; i < totalCalls; i++) {
+        $.ajax({
+            url: apiEndpoint+generateRandomText(8),
+            type: 'POST',
+            success: function(response) {
+                callsCompleted++;
+                console.log(`Call ${callsCompleted} completed.`);
+            },
+            error: function(xhr, status, error) {
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
