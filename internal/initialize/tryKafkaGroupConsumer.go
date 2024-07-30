@@ -69,7 +69,6 @@ func TryKafka1() {
 func buildConsumer1(ctx context.Context, consumerID int) {
 	config := sarama.NewConfig()
 	config.Consumer.Offsets.Initial = sarama.OffsetOldest
-	config.Consumer.Group.Rebalance.Strategy = sarama.BalanceStrategySticky
 
 	consumer, _ := sarama.NewConsumerGroup([]string{"localhost:9092"}, "my-consumer-group", config)
 	defer consumer.Close()
@@ -77,10 +76,7 @@ func buildConsumer1(ctx context.Context, consumerID int) {
 	topics := []string{"test-topic"}
 	handler := &ConsumerGroupHandler{consumerID: consumerID}
 	for {
-		err := consumer.Consume(ctx, topics, handler)
-		if err != nil {
-			global.Logger.Error("Error from consumer", zap.Int("ConsumerID", consumerID), zap.Error(err))
-		}
+		consumer.Consume(ctx, topics, handler)
 	}
 }
 

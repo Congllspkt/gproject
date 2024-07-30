@@ -1,3 +1,40 @@
-{"level":"INFO","time":"2024-07-30T14:39:34.758+0700","msg":"Init Logger success"}
-{"level":"INFO","time":"2024-07-30T14:39:34.762+0700","msg":"Init mySQL success"}
-{"level":"INFO","time":"2024-07-30T14:39:34.882+0700","msg":"Redis Init Success"}
+{"level":"INFO","time":"2024-07-30T14:49:08.229+0700","msg":"received","ConsumerID":2,"Value":"cZPWx4Sf"}
+{"level":"INFO","time":"2024-07-30T14:49:08.232+0700","msg":"received","ConsumerID":0,"Value":"mcuNiTGP"}
+{"level":"INFO","time":"2024-07-30T14:49:08.234+0700","msg":"Sent","message":"cZPWx4Sf","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.234+0700","msg":"received","ConsumerID":1,"Value":"EpYqMtqt"}
+{"level":"INFO","time":"2024-07-30T14:49:08.236+0700","msg":"received","ConsumerID":0,"Value":"KUvaWRLD"}
+{"level":"INFO","time":"2024-07-30T14:49:08.238+0700","msg":"received","ConsumerID":2,"Value":"BIc3LdL9"}
+{"level":"INFO","time":"2024-07-30T14:49:08.238+0700","msg":"Sent","message":"mcuNiTGP","topic":"test-topic","number_partitions":3,"partition":2}
+{"level":"INFO","time":"2024-07-30T14:49:08.239+0700","msg":"received","ConsumerID":0,"Value":"HI7wrAsQ"}
+{"level":"INFO","time":"2024-07-30T14:49:08.241+0700","msg":"Sent","message":"EpYqMtqt","topic":"test-topic","number_partitions":3,"partition":0}
+{"level":"INFO","time":"2024-07-30T14:49:08.244+0700","msg":"Sent","message":"HI7wrAsQ","topic":"test-topic","number_partitions":3,"partition":2}
+{"level":"INFO","time":"2024-07-30T14:49:08.244+0700","msg":"Sent","message":"KUvaWRLD","topic":"test-topic","number_partitions":3,"partition":2}
+{"level":"INFO","time":"2024-07-30T14:49:08.241+0700","msg":"received","ConsumerID":2,"Value":"F4NX49aP"}
+{"level":"INFO","time":"2024-07-30T14:49:08.245+0700","msg":"Sent","message":"BIc3LdL9","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.245+0700","msg":"received","ConsumerID":2,"Value":"ByVDYD5L"}
+{"level":"INFO","time":"2024-07-30T14:49:08.250+0700","msg":"Sent","message":"ByVDYD5L","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.250+0700","msg":"received","ConsumerID":2,"Value":"clgMleD0"}
+{"level":"INFO","time":"2024-07-30T14:49:08.251+0700","msg":"Sent","message":"F4NX49aP","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.252+0700","msg":"received","ConsumerID":0,"Value":"dOruXRfM"}
+{"level":"INFO","time":"2024-07-30T14:49:08.253+0700","msg":"received","ConsumerID":2,"Value":"dCsBPbIQ"}
+{"level":"INFO","time":"2024-07-30T14:49:08.256+0700","msg":"received","ConsumerID":2,"Value":"EeArKwzX"}
+{"level":"INFO","time":"2024-07-30T14:49:08.256+0700","msg":"Sent","message":"clgMleD0","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.257+0700","msg":"received","ConsumerID":2,"Value":"b0EEBG1g"}
+{"level":"INFO","time":"2024-07-30T14:49:08.257+0700","msg":"Sent","message":"dOruXRfM","topic":"test-topic","number_partitions":3,"partition":2}
+{"level":"INFO","time":"2024-07-30T14:49:08.256+0700","msg":"received","ConsumerID":0,"Value":"tZNdno6Z"}
+{"level":"INFO","time":"2024-07-30T14:49:08.262+0700","msg":"Sent","message":"dCsBPbIQ","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.263+0700","msg":"Sent","message":"EeArKwzX","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.264+0700","msg":"Sent","message":"b0EEBG1g","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.264+0700","msg":"Sent","message":"tZNdno6Z","topic":"test-topic","number_partitions":3,"partition":2}
+{"level":"INFO","time":"2024-07-30T14:49:08.266+0700","msg":"received","ConsumerID":2,"Value":"EwxcFtEw"}
+{"level":"INFO","time":"2024-07-30T14:49:08.267+0700","msg":"received","ConsumerID":0,"Value":"VgLectjf"}
+{"level":"INFO","time":"2024-07-30T14:49:08.270+0700","msg":"received","ConsumerID":2,"Value":"cSJJuN2W"}
+{"level":"INFO","time":"2024-07-30T14:49:08.271+0700","msg":"received","ConsumerID":2,"Value":"n0r1fvKc"}
+{"level":"INFO","time":"2024-07-30T14:49:08.274+0700","msg":"received","ConsumerID":1,"Value":"gYYlA1bN"}
+{"level":"INFO","time":"2024-07-30T14:49:08.274+0700","msg":"received","ConsumerID":2,"Value":"A45OrZ3g"}
+{"level":"INFO","time":"2024-07-30T14:49:08.274+0700","msg":"Sent","message":"EwxcFtEw","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.275+0700","msg":"Sent","message":"VgLectjf","topic":"test-topic","number_partitions":3,"partition":2}
+{"level":"INFO","time":"2024-07-30T14:49:08.368+0700","msg":"Sent","message":"gYYlA1bN","topic":"test-topic","number_partitions":3,"partition":0}
+{"level":"INFO","time":"2024-07-30T14:49:08.368+0700","msg":"Sent","message":"n0r1fvKc","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.368+0700","msg":"Sent","message":"cSJJuN2W","topic":"test-topic","number_partitions":3,"partition":1}
+{"level":"INFO","time":"2024-07-30T14:49:08.447+0700","msg":"Sent","message":"A45OrZ3g","topic":"test-topic","number_partitions":3,"partition":1}
