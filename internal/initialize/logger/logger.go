@@ -40,7 +40,10 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 
 	var multiWriteSyncer = zapcore.NewMultiWriteSyncer(zapcore.AddSync(os.Stdout), zapcore.AddSync(&hook))
 	core := zapcore.NewCore(encoder, multiWriteSyncer, level)
-	return &LoggerZap{zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.ErrorLevel))}
+	return &LoggerZap{zap.New(core, 
+		// zap.AddCaller(), 
+		zap.AddStacktrace(zap.ErrorLevel)),
+	}
 }
 
 func getEncoderLog() zapcore.Encoder {
@@ -48,6 +51,6 @@ func getEncoderLog() zapcore.Encoder {
 	encodeConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 	encodeConfig.TimeKey = "time"
 	encodeConfig.EncodeLevel = zapcore.CapitalLevelEncoder
-	encodeConfig.EncodeCaller = zapcore.ShortCallerEncoder
+	// encodeConfig.EncodeCaller = zapcore.ShortCallerEncoder
 	return zapcore.NewJSONEncoder(encodeConfig)
 }

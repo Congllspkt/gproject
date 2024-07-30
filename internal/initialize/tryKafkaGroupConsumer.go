@@ -3,6 +3,7 @@ package initialize
 import (
 	"context"
 	"gproject/internal/initialize/global"
+	"math/rand/v2"
 	"net/http"
 
 	"github.com/IBM/sarama"
@@ -16,6 +17,7 @@ var producer1 sarama.SyncProducer
 func TryKafka1() {
 	config := sarama.NewConfig()
 	config.Producer.Return.Successes = true
+	config.Producer.Partitioner = sarama.NewManualPartitioner
 
 	var err error
 	producer1, err = sarama.NewSyncProducer([]string{"localhost:9092"}, config)
@@ -27,8 +29,6 @@ func TryKafka1() {
 			global.Logger.Error("Failed to close Sarama producer")
 		}
 	}()
-
-	// Create 3 partitions for the "test-topic"
 	admin, err := sarama.NewClusterAdmin([]string{"localhost:9092"}, config)
 	if err != nil {
 		global.Logger.Error("Failed to create cluster admin")
@@ -60,9 +60,10 @@ func TryKafka1() {
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	for i := 1; i <= 3; i++ {
-		buildConsumer1(ctx, i)
-	}
+
+	go buildConsumer1(ctx, 0)
+	go buildConsumer1(ctx, 1)
+	buildConsumer1(ctx, 2)
 }
 
 func buildConsumer1(ctx context.Context, consumerID int) {
@@ -70,16 +71,11 @@ func buildConsumer1(ctx context.Context, consumerID int) {
 	config.Consumer.Offsets.Initial = sarama.OffsetOldest
 	config.Consumer.Group.Rebalance.Strategy = sarama.BalanceStrategySticky
 
-	consumer, err := sarama.NewConsumerGroup([]string{"localhost:9092"}, "my-consumer-group", config)
-	if err != nil {
-		global.Logger.Error("Failed to start Sarama consumer group", zap.Int("ConsumerID", consumerID))
-		panic("")
-	}
+	consumer, _ := sarama.NewConsumerGroup([]string{"localhost:9092"}, "my-consumer-group", config)
 	defer consumer.Close()
 
 	topics := []string{"test-topic"}
 	handler := &ConsumerGroupHandler{consumerID: consumerID}
-
 	for {
 		err := consumer.Consume(ctx, topics, handler)
 		if err != nil {
@@ -104,9 +100,9 @@ func (h *ConsumerGroupHandler) Cleanup(_ sarama.ConsumerGroupSession) error {
 
 func (h *ConsumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession, claim sarama.ConsumerGroupClaim) error {
 	for msg := range claim.Messages() {
-		global.Logger.Info("Message claimed",
-		 zap.Int("ConsumerID", h.consumerID), 
-		 zap.String("Value", string(msg.Value)),
+		global.Logger.Info("received",
+			zap.Int("ConsumerID", h.consumerID),
+			zap.String("Value", string(msg.Value)),
 		)
 		session.MarkMessage(msg, "")
 	}
@@ -116,9 +112,12 @@ func (h *ConsumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession,
 func produceMessage1(c *gin.Context) {
 	message := c.Query("message")
 	topic := "test-topic"
+
+	num := rand.IntN(3)
 	msg := &sarama.ProducerMessage{
-		Topic: topic,
-		Value: sarama.StringEncoder(message),
+		Topic:     topic,
+		Partition: int32(num),
+		Value:     sarama.StringEncoder(message),
 	}
 	_, _, err := producer1.SendMessage(msg)
 	if err != nil {
@@ -130,9 +129,18 @@ func produceMessage1(c *gin.Context) {
 	config := sarama.NewConfig()
 	client, _ := sarama.NewClient([]string{broker}, config)
 	partitions, _ := client.Partitions("test-topic")
+
+	global.Logger.Info("Sent",
+		zap.String("message", message),
+		zap.String("topic", topic),
+		zap.Int("number_partitions", len(partitions)),
+		zap.Int("partition", num),
+	)
+
 	c.JSON(http.StatusOK, gin.H{
-		"message":           "Message sent successfully",
+		"message":           message,
 		"topic":             topic,
 		"number_partitions": len(partitions),
+		"partition":         num,
 	})
 }

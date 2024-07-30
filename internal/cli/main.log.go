@@ -10,7 +10,7 @@ func LogMain() {
 	encoder := getEncoderLog()
 	sync := getWriterSync()
 	core := zapcore.NewCore(encoder, sync, zapcore.InfoLevel)
-	logger := zap.New(core, zap.AddCaller())
+	logger := zap.New(core)
 
 	logger.Info("info log", zap.Int("line", 1))
 	logger.Error("error log", zap.Int("line", 2))
@@ -22,7 +22,7 @@ func getEncoderLog() zapcore.Encoder {
 	encodeConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 	encodeConfig.TimeKey = "time"
 	encodeConfig.EncodeLevel = zapcore.CapitalLevelEncoder
-	encodeConfig.EncodeCaller = zapcore.ShortCallerEncoder
+	// encodeConfig.EncodeCaller = zapcore.ShortCallerEncoder
 	return zapcore.NewJSONEncoder(encodeConfig)
 }
 
