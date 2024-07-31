@@ -115,6 +115,6 @@ go run cmd/server/main.go
 
 
 git add .
-git commit -m 'kafka p1'
+git commit -m 'kafka UI'
 git push
 
