@@ -1,0 +1,2 @@
+{"level":"INFO","time":"2024-07-31T15:55:30.668+0700","msg":"Init Logger success"}
+{"level":"ERROR","time":"2024-07-31T15:55:30.671+0700","msg":"Init mySQL fail","error":"dial tcp :0: connectex: The requested address is not valid in its context.","stacktrace":"gproject/internal/initialize.InitMySql\n\td:/g-project/gproject/internal/initialize/mysql.go:24\ngproject/internal/initialize.Run\n\td:/g-project/gproject/internal/initialize/run.go:9\nmain.main\n\td:/g-project/gproject/cmd/server/main.go:9\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:271"}

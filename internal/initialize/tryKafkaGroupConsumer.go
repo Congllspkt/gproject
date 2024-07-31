@@ -6,6 +6,8 @@ import (
 	"math/rand/v2"
 	"net/http"
 
+	// "time"
+
 	"github.com/IBM/sarama"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -13,6 +15,8 @@ import (
 )
 
 var producer1 sarama.SyncProducer
+
+var visited = make(map[string]int)
 
 func TryKafka1() {
 	config := sarama.NewConfig()
@@ -91,17 +95,41 @@ func (h *ConsumerGroupHandler) Setup(_ sarama.ConsumerGroupSession) error {
 
 func (h *ConsumerGroupHandler) Cleanup(_ sarama.ConsumerGroupSession) error {
 	global.Logger.Info("Consumer closing", zap.Int("ConsumerID", h.consumerID))
+	// time.Sleep(5 * time.Second)
 	return nil
 }
 
 func (h *ConsumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession, claim sarama.ConsumerGroupClaim) error {
 	for msg := range claim.Messages() {
-		global.Logger.Info("received",
-			zap.Int("ConsumerID", h.consumerID),
-			zap.String("Value", string(msg.Value)),
-		)
-		session.MarkMessage(msg, "")
-	}
+		if msg.Value[0] == 'A' {
+			global.LoggerConsumer.Info("receive - fail",
+				zap.Int("ConsumerID", h.consumerID),
+				zap.String("Value", string(msg.Value)),
+			)
+			key := string(msg.Value)
+			if val, ok := visited[key]; ok {
+				visited[key] = val + 1
+			} else {
+				visited[key] = 1
+			}
+
+			if visited[key] >= 3 {
+				global.LoggerConsumer.Info("Consumer read 3 times, get Error",
+					zap.Int("ConsumerID", h.consumerID),
+					zap.String("Value", string(msg.Value)),
+				)
+				delete(visited, key)
+				session.MarkMessage(msg, "")
+			}
+			return nil
+		}
+			global.LoggerConsumer.Info("received",
+				zap.Int("ConsumerID", h.consumerID),
+				zap.String("Value", string(msg.Value)),
+			)
+			session.MarkMessage(msg, "")
+		}
+
 	return nil
 }
 
@@ -126,7 +154,7 @@ func produceMessage1(c *gin.Context) {
 	client, _ := sarama.NewClient([]string{broker}, config)
 	partitions, _ := client.Partitions("test-topic")
 
-	global.Logger.Info("Sent",
+	global.LoggerProducer.Info("Sent",
 		zap.String("message", message),
 		zap.String("topic", topic),
 		zap.Int("number_partitions", len(partitions)),

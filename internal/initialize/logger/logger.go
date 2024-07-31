@@ -12,7 +12,7 @@ type LoggerZap struct {
 	*zap.Logger
 }
 
-func NewLogger(config setting.LoggerSetting) *LoggerZap {
+func NewLogger(config setting.LoggerSetting, sourceFile string) *LoggerZap {
 	logLevel := config.Log_level //"debug"
 	var level zapcore.Level
 	switch logLevel {
@@ -22,7 +22,7 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 		level = zapcore.InfoLevel
 	case "warn":
 		level = zapcore.WarnLevel
-	case "error":
+	case "error": 
 		level = zapcore.ErrorLevel
 	default:
 		level = zapcore.InfoLevel
@@ -31,7 +31,7 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 
 
 	hook := lumberjack.Logger{
-		Filename:   config.File_log_name,
+		Filename:   sourceFile,
 		MaxSize:    config.Max_size,
 		MaxBackups: config.Max_backups,
 		MaxAge:     config.Max_age,

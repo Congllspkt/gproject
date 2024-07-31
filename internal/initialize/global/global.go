@@ -11,6 +11,8 @@ import (
 var (
 	Config setting.Config
 	Logger *logger.LoggerZap
+	LoggerConsumer *logger.LoggerZap
+	LoggerProducer *logger.LoggerZap
 	Mdb    *gorm.DB
 	Rdb    *redis.Client
 )
