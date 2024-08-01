@@ -115,6 +115,6 @@ go run cmd/server/main.go
 
 
 git add .
-git commit -m 'kafka retry'
+git commit -m 'kafka fix'
 git push
 

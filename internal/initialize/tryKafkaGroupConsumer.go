@@ -120,7 +120,7 @@ func (h *ConsumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession,
 				)
 				delete(visited, key)
 				session.MarkMessage(msg, "")
-			}
+			} 
 			return nil
 		}
 			global.LoggerConsumer.Info("received",
@@ -149,22 +149,15 @@ func produceMessage1(c *gin.Context) {
 		return
 	}
 
-	broker := "localhost:9092"
-	config := sarama.NewConfig()
-	client, _ := sarama.NewClient([]string{broker}, config)
-	partitions, _ := client.Partitions("test-topic")
-
 	global.LoggerProducer.Info("Sent",
 		zap.String("message", message),
 		zap.String("topic", topic),
-		zap.Int("number_partitions", len(partitions)),
 		zap.Int("partition", num),
 	)
 
 	c.JSON(http.StatusOK, gin.H{
 		"message":           message,
 		"topic":             topic,
-		"number_partitions": len(partitions),
 		"partition":         num,
 	})
 }
