@@ -145,3 +145,5 @@
 {"level":"INFO","time":"2024-08-01T09:46:25.132+0700","msg":"Consumer ready","ConsumerID":0}
 {"level":"INFO","time":"2024-08-01T09:46:25.132+0700","msg":"Consumer ready","ConsumerID":1}
 {"level":"INFO","time":"2024-08-01T09:46:25.132+0700","msg":"Consumer ready","ConsumerID":2}
+{"level":"INFO","time":"2024-08-02T11:05:55.909+0700","msg":"Init Logger success"}
+{"level":"ERROR","time":"2024-08-02T11:05:55.911+0700","msg":"Init mySQL fail","error":"dial tcp 127.0.0.1:33306: connectex: No connection could be made because the target machine actively refused it.","stacktrace":"gproject/internal/initialize.InitMySql\n\tD:/g-project/gproject/internal/initialize/mysql.go:24\ngproject/internal/initialize.Run\n\tD:/g-project/gproject/internal/initialize/run.go:9\nmain.main\n\tD:/g-project/gproject/cmd/server/main.go:9\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:271"}

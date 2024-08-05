@@ -112,9 +112,11 @@ docker-compose up -d
 go run cmd/server/main.go
 
 
+cloudinary to save and resize image 
+upload many files -> sent many requests to service to save file -> improve performence
 
 
 git add .
-git commit -m 'kafka fix'
+git commit -m 'cloudinary'
 git push
 
