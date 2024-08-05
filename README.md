@@ -116,13 +116,14 @@ cloudinary to save and resize image
 upload many files -> sent many requests to service to save file -> improve performence
 
 s3 -> upload 
+
 read: s3-request presigner
 
-tool keycdn
+web tool keycdn
 
 
 
 git add .
-git commit -m 's3'
+git commit -m 'en'
 git push
 
