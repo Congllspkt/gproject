@@ -124,6 +124,6 @@ web tool keycdn
 
 
 git add .
-git commit -m 'en'
+git commit -m 'map'
 git push
 

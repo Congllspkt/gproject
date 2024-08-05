@@ -1,0 +1,21 @@
+	m := make(map[string]int)
+	fmt.Println(m) // m = map[]
+	
+	m1 := map[string]int{} // map[]
+	fmt.Println(m1)
+	
+	m["FF"] = 0
+	fmt.Println(m["FF"]) // = 0
+	
+	fmt.Println(len(m)) // = 1
+	
+	// delete(m, "route")
+	
+	// init
+	commits := map[string]int{
+    "rsc": 3711,
+    "r":   2138,
+    "gri": 1908,
+    "adg": 912,
+}
+	fmt.Println(len(commits)) // 4
