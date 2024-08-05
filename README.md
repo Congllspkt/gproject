@@ -115,8 +115,14 @@ go run cmd/server/main.go
 cloudinary to save and resize image 
 upload many files -> sent many requests to service to save file -> improve performence
 
+s3 -> upload 
+read: s3-request presigner
+
+tool keycdn
+
+
 
 git add .
-git commit -m 'cloudinary'
+git commit -m 's3'
 git push
 
