@@ -6,6 +6,6 @@ import (
 
 func main() {
 
-	initialize.Run()
+	initialize.TryInsert1M()
 	
 }

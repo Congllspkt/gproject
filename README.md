@@ -124,6 +124,6 @@ web tool keycdn
 
 
 git add .
-git commit -m 'en'
+git commit -m 'test insert 1M, 10M'
 git push
 
