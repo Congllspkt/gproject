@@ -6,6 +6,6 @@ import (
 
 func main() {
 
-	initialize.TryInsert1M()
+	initialize.TryGeneric()
 	
 }

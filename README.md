@@ -124,6 +124,6 @@ web tool keycdn
 
 
 git add .
-git commit -m 'remove'
+git commit -m 'TryGeneric'
 git push
 

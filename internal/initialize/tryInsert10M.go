@@ -10,7 +10,7 @@ import (
 
 type UserTest struct {
 	gorm.Model
-	ID uint
+	ID   uint
 	Name string
 }
 
@@ -55,7 +55,7 @@ func TryInsert10M() {
 			// Insert any remaining records
 			if len(users) > 0 {
 				db.CreateInBatches(users, batchSize)
-				
+
 			}
 		}(w)
 	}
