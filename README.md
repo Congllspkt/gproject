@@ -124,6 +124,6 @@ web tool keycdn
 
 
 git add .
-git commit -m 'TryGeneric'
+git commit -m 'jwt'
 git push
 

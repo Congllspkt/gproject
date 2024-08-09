@@ -16,7 +16,7 @@ type UserTest struct {
 
 //1:10s
 func TryInsert10M() {
-	dns := "root:root1234@tcp(127.0.0.1:33306)/shopdevgo?charset=utf8mb4&parseTime=True"
+	dns := "root:root1234@tcp(127.0.0.1:33306)/shopdevgo?charset=utf8mb4&parseTime=True" 
 	db, _ := gorm.Open(mysql.Open(dns), &gorm.Config{})
 	if db.Migrator().HasTable(&UserTest{}) {
 		db.Migrator().DropTable(&UserTest{})
@@ -61,3 +61,6 @@ func TryInsert10M() {
 	}
 	wg.Wait()
 }
+
+
+

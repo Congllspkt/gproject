@@ -6,6 +6,6 @@ import (
 
 func main() {
 
-	initialize.TryGeneric()
+	initialize.TryJWT()
 	
 }
